@@ -1,0 +1,476 @@
+<!doctype html>
+<html lang="en">
+
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <meta name="color-scheme" content="dark">
+  <meta name="theme-color" content="#101713">
+  <title>Adware Hunter · A calmer phone</title>
+  <link rel="icon" href="/favicon.svg" type="image/svg+xml">
+  <link rel="stylesheet" href="/styles.css">
+  <script src="/app.js" defer></script>
+</head>
+
+<body>
+  <svg class="icon-library" xmlns="http://www.w3.org/2000/svg" aria-hidden="true">
+    <symbol id="i-shield" viewBox="0 0 24 24">
+      <path d="m12 3 8 3v6c0 5-8 9-8 9s-8-4-8-9V6l8-3Z" />
+      <path d="m8.5 12 2.5 2.5 4.5-5" />
+    </symbol>
+    <symbol id="i-phone" viewBox="0 0 24 24">
+      <rect x="6" y="2" width="12" height="20" rx="3" />
+      <path d="M10 5h4m-3 14h2" />
+    </symbol>
+    <symbol id="i-target" viewBox="0 0 24 24">
+      <circle cx="12" cy="12" r="8" />
+      <circle cx="12" cy="12" r="3" />
+      <path d="M12 1v4m0 14v4M1 12h4m14 0h4" />
+    </symbol>
+    <symbol id="i-grid" viewBox="0 0 24 24">
+      <rect x="3" y="3" width="7" height="7" rx="2" />
+      <rect x="14" y="3" width="7" height="7" rx="2" />
+      <rect x="3" y="14" width="7" height="7" rx="2" />
+      <rect x="14" y="14" width="7" height="7" rx="2" />
+    </symbol>
+    <symbol id="i-check" viewBox="0 0 24 24">
+      <path d="m5 12 4 4L19 6" />
+    </symbol>
+    <symbol id="i-arrow" viewBox="0 0 24 24">
+      <path d="M4 12h16m-6-6 6 6-6 6" />
+    </symbol>
+    <symbol id="i-lock" viewBox="0 0 24 24">
+      <rect x="5" y="10" width="14" height="11" rx="3" />
+      <path d="M8 10V7a4 4 0 0 1 8 0v3m-4 5v2" />
+    </symbol>
+    <symbol id="i-help" viewBox="0 0 24 24">
+      <circle cx="12" cy="12" r="9" />
+      <path d="M9.5 9a2.5 2.5 0 1 1 4 2c-1.5.8-1.5 1.5-1.5 2m0 3h.01" />
+    </symbol>
+    <symbol id="i-refresh" viewBox="0 0 24 24">
+      <path d="M20 8a8 8 0 1 0 0 8M20 3v5h-5" />
+    </symbol>
+    <symbol id="i-plug" viewBox="0 0 24 24">
+      <path d="M8 3v5m8-5v5M6 8h12v3a6 6 0 0 1-12 0V8Zm6 9v5" />
+    </symbol>
+    <symbol id="i-eye" viewBox="0 0 24 24">
+      <path d="M2 12s4-7 10-7 10 7 10 7-4 7-10 7S2 12 2 12Z" />
+      <circle cx="12" cy="12" r="3" />
+    </symbol>
+    <symbol id="i-spark" viewBox="0 0 24 24">
+      <path d="m12 2 2.5 7.5L22 12l-7.5 2.5L12 22l-2.5-7.5L2 12l7.5-2.5L12 2Z" />
+    </symbol>
+    <symbol id="i-close" viewBox="0 0 24 24">
+      <path d="m6 6 12 12M6 18 18 6" />
+    </symbol>
+    <symbol id="i-trash" viewBox="0 0 24 24">
+      <path d="M3 6h18M9 6V3h6v3M5 6l1 15h12l1-15M10 10v7m4-7v7" />
+    </symbol>
+    <symbol id="i-motion" viewBox="0 0 24 24">
+      <path d="M3 7h9M3 12h6M3 17h9m3-12 6 7-6 7" />
+    </symbol>
+    <symbol id="i-text" viewBox="0 0 24 24">
+      <path d="m3 19 6-14 6 14M5 15h8m3-5h6m-3 0v9" />
+    </symbol>
+    <symbol id="i-info" viewBox="0 0 24 24">
+      <circle cx="12" cy="12" r="9" />
+      <path d="M12 11v6m0-10h.01" />
+    </symbol>
+  </svg>
+  <a class="skip-link" href="#main">Skip to content</a>
+  <div class="app-shell">
+    <aside class="sidebar">
+      <a href="#" class="brand" aria-label="Adware Hunter home" data-go="connect">
+        <span class="brand-icon"><svg>
+            <use href="#i-shield" />
+          </svg></span>
+        <span>Adware<span class="brand-light">Hunter</span></span>
+      </a>
+      <div class="sidebar-caption">A LITTLE HELP. A LOT LESS ADS.</div>
+      <nav class="steps-nav" aria-label="Your progress">
+        <button class="nav-item active" data-go="connect" aria-current="step"><span class="nav-icon"><svg>
+              <use href="#i-plug" />
+            </svg></span><span><strong>Connect phone</strong><small>Let’s get you set up</small></span><span
+            class="step-count">01</span></button>
+        <button class="nav-item" data-go="hunt" disabled><span class="nav-icon"><svg>
+              <use href="#i-target" />
+            </svg></span><span><strong>Find the ad</strong><small>Catch it in the moment</small></span><span
+            class="step-count">02</span></button>
+        <button class="nav-item" data-go="review" disabled><span class="nav-icon"><svg>
+              <use href="#i-grid" />
+            </svg></span><span><strong>Review apps</strong><small>You make the decision</small></span><span
+            class="step-count">03</span></button>
+        <button class="nav-item" data-go="finish"><span class="nav-icon"><svg>
+              <use href="#i-shield" />
+            </svg></span><span><strong>Finish up</strong><small>A little peace of mind</small></span><span
+            class="step-count">04</span></button>
+      </nav>
+      <div class="sidebar-bottom">
+        <div class="private-note"><svg>
+            <use href="#i-lock" />
+          </svg><strong>Just you and your phone.</strong>
+          <p>Your reports stay on this computer. No account. No cloud uploads.</p>
+        </div>
+        <button class="utility-button" id="text-toggle" aria-pressed="false"><svg>
+            <use href="#i-text" />
+          </svg><span>Larger text</span><span class="toggle" aria-hidden="true"></span></button>
+        <button class="utility-button" id="motion-toggle" aria-pressed="true"><svg>
+            <use href="#i-motion" />
+          </svg><span>Animations</span><span class="toggle" aria-hidden="true"></span></button>
+        <button class="utility-button" data-help><svg>
+            <use href="#i-help" />
+          </svg><span>Need a hand?</span><span class="help-arrow">↗</span></button>
+        <div class="local-label"><span class="status-dot"></span> RUNNING ON YOUR COMPUTER</div>
+      </div>
+    </aside>
+    <div class="workspace">
+      <header class="topbar">
+        <div class="breadcrumb">Your phone’s fresh start <span>/</span> <strong id="breadcrumb">Connect</strong></div>
+        <div class="topbar-right"><span class="local-pill"><svg>
+              <use href="#i-lock" />
+            </svg>Local & private</span><span class="connection-pill" id="connection-pill"><span
+              class="status-dot"></span><span id="connection-label">Checking connection</span></span></div>
+      </header>
+      <main id="main" tabindex="-1">
+        <div class="demo-banner" id="demo-banner" hidden><svg>
+            <use href="#i-eye" />
+          </svg><span><strong>You’re in preview mode.</strong> Example data only. No real phone will be changed.</span>
+        </div>
+        <section class="page active" id="page-connect" aria-labelledby="connect-title">
+          <div class="page-heading">
+            <div>
+              <div class="eyebrow"><span class="tiny-line"></span> STEP 01 / CONNECT</div>
+              <h1 id="connect-title" tabindex="-1">A calmer phone.<br><span>Let’s start here.</span></h1>
+              <p class="page-description">Connect your Android phone. We’ll take it one easy step at a time.</p>
+            </div>
+            <div class="heading-tag"><svg>
+                <use href="#i-spark" />
+              </svg> At your own pace</div>
+          </div>
+          <div class="connection-grid">
+            <article class="card device-card stagger">
+              <div class="card-topline"><span class="section-label">YOUR PHONE, YOUR CONTROL</span><span
+                  class="small-badge">ANDROID</span></div>
+              <div class="phone-scene" id="phone-scene" aria-hidden="true">
+                <div class="scene-orbit orbit-one"></div>
+                <div class="scene-orbit orbit-two"></div>
+                <div class="scene-cross cross-one">+</div>
+                <div class="scene-cross cross-two">+</div>
+                <div class="floating-badge lock-badge"><svg>
+                    <use href="#i-lock" />
+                  </svg></div>
+                <div class="phone">
+                  <div class="phone-camera"></div>
+                  <div class="phone-screen">
+                    <div class="phone-clock">A fresh start</div>
+                    <div class="shield-halo"><svg class="phone-shield">
+                        <use href="#i-shield" />
+                      </svg></div>
+                    <div class="phone-message">Less noise.<br>More peace.</div>
+                    <div class="phone-home"></div>
+                  </div>
+                  <div class="phone-side"></div>
+                </div>
+                <div class="floating-badge check-badge"><svg>
+                    <use href="#i-check" />
+                  </svg></div>
+                <div class="usb-cable"></div>
+                <div class="usb-end"></div>
+              </div>
+              <div class="device-state"><span class="signal-dot"></span>
+                <h2 id="device-title">Ready when you are</h2>
+                <p id="device-description">Your phone will appear here once it’s connected.</p>
+              </div>
+              <div class="device-foot"><span><svg>
+                    <use href="#i-lock" />
+                  </svg> Private by design</span><span><svg>
+                    <use href="#i-check" />
+                  </svg> No root needed</span></div>
+            </article>
+            <article class="card steps-card stagger">
+              <div class="card-topline">
+                <h2>A few simple steps</h2><span class="mini-icon"><svg>
+                    <use href="#i-plug" />
+                  </svg></span>
+              </div>
+              <p class="muted">Have your phone and a USB cable handy.</p>
+              <ol class="setup-steps">
+                <li><span class="number">1</span>
+                  <div>
+                    <h3>Plug in your phone</h3>
+                    <p>Connect it to this computer with a cable that transfers data.</p>
+                  </div>
+                </li>
+                <li><span class="number">2</span>
+                  <div>
+                    <h3>Enable USB debugging</h3>
+                    <p>This lets your phone talk to this computer. We’ll show you how.</p><button class="text-button"
+                      data-help>Show me the steps <svg>
+                        <use href="#i-arrow" />
+                      </svg></button>
+                  </div>
+                </li>
+                <li><span class="number">3</span>
+                  <div>
+                    <h3>Tap “Allow” on your phone</h3>
+                    <p>Keep the screen unlocked and approve the connection.</p>
+                  </div>
+                </li>
+              </ol>
+              <div class="gentle-note"><svg>
+                  <use href="#i-help" />
+                </svg><span>Never done this before? That’s okay.<br>Our guide walks you through each step.</span></div>
+            </article>
+          </div>
+          <div class="card connection-bar stagger">
+            <div class="connection-bar-copy"><span class="connection-symbol"><svg>
+                  <use href="#i-plug" />
+                </svg></span>
+              <div>
+                <h2 id="connect-bar-title">Let’s find your phone</h2>
+                <p id="connect-bar-description">Check the connection when you’re ready.</p>
+              </div>
+            </div>
+            <div class="connection-actions"><button class="button secondary" id="check-button"><svg>
+                  <use href="#i-refresh" />
+                </svg><span>Check connection</span></button><button class="button primary" id="connect-next"
+                data-go="hunt" disabled>Continue <svg>
+                  <use href="#i-arrow" />
+                </svg></button><button class="button primary" id="setup-button" hidden>Set up connection <svg>
+                  <use href="#i-arrow" />
+                </svg></button></div>
+            <div class="device-select-wrap" id="device-select-wrap" hidden><label for="device-select">Choose your
+                phone</label><select id="device-select"></select></div>
+          </div>
+          <div class="reassurance stagger"><svg>
+              <use href="#i-shield" />
+            </svg>
+            <p><strong>You’re always in control.</strong> Nothing is removed without your permission.</p>
+          </div>
+        </section>
+        <section class="page" id="page-hunt" aria-labelledby="hunt-title" hidden>
+          <div class="page-heading">
+            <div>
+              <div class="eyebrow"><span class="tiny-line"></span> STEP 02 / FIND THE AD</div>
+              <h1 id="hunt-title" tabindex="-1">Let’s catch that <span>interruption.</span></h1>
+              <p class="page-description">Use your phone normally. When an ad appears, leave it visible and record it
+                here.</p>
+            </div>
+            <div class="report-pill"><span id="report-count">0</span> reports recorded</div>
+          </div>
+          <div class="hunt-grid">
+            <article class="card capture-card stagger"><span class="section-label">A LITTLE DETECTIVE WORK</span>
+              <div class="radar" aria-hidden="true"><span></span><span></span>
+                <div class="radar-core"><svg>
+                    <use href="#i-target" />
+                  </svg></div>
+              </div>
+              <h2>See an unwanted ad?</h2>
+              <p>Keep it on your phone’s screen, then click below.<br>We’ll record which app is visible at that moment.
+              </p><button class="button primary capture-button" id="capture-button"><svg>
+                  <use href="#i-target" />
+                </svg><span>An ad appeared — record it</span></button>
+              <div class="capture-feedback" id="capture-feedback" role="status">There’s no hurry. We’re ready when you
+                are.</div>
+            </article>
+            <div class="hunt-side">
+              <article class="card stagger"><span class="section-label">LET’S NARROW IT DOWN</span>
+                <h2>Where do the ads appear?</h2><label class="sr-only" for="symptom">Where the ads
+                  appear</label><select id="symptom">
+                  <option>Over other apps or the home screen</option>
+                  <option>Only inside one app or game</option>
+                  <option>In my phone’s notifications</option>
+                  <option>Inside my web browser</option>
+                </select>
+                <p id="symptom-note" class="context-note"></p>
+              </article>
+              <article class="card insight-card stagger"><span class="insight-icon"><svg>
+                    <use href="#i-info" />
+                  </svg></span>
+                <h3>A clue, not a verdict.</h3>
+                <p>An app being visible doesn’t prove it caused the ad. Some overlays and notification ads may not be
+                  identified this way.</p>
+              </article>
+            </div>
+          </div>
+          <div class="page-actions"><button class="button secondary" data-go="connect"><svg class="flip">
+                <use href="#i-arrow" />
+              </svg>Back to connection</button><button class="button primary" data-go="review" id="review-next"
+              disabled>Review recorded apps <svg>
+                <use href="#i-arrow" />
+              </svg></button></div>
+        </section>
+        <section class="page" id="page-review" aria-labelledby="review-title" hidden>
+          <div class="page-heading">
+            <div>
+              <div class="eyebrow"><span class="tiny-line"></span> STEP 03 / REVIEW APPS</div>
+              <h1 id="review-title" tabindex="-1">The clues. <span>Your call.</span></h1>
+              <p class="page-description">Here’s what was visible during your reports. Take a look before you decide.
+              </p>
+            </div>
+          </div>
+          <div class="review-summary"><span class="summary-icon"><svg>
+                <use href="#i-grid" />
+              </svg></span>
+            <div><strong id="results-summary">No recorded apps yet</strong><span>Observations from the selected phone
+                only</span></div><span class="small-badge">NOT A MALWARE VERDICT</span>
+          </div>
+          <div class="review-grid">
+            <article class="card app-list-card stagger">
+              <div class="card-topline">
+                <h2>Recorded apps</h2><span class="section-label">SELECT TO REVIEW</span>
+              </div>
+              <div id="app-list" class="app-list" aria-label="Recorded apps"></div>
+              <div class="empty-state" id="empty-results"><svg>
+                  <use href="#i-eye" />
+                </svg>
+                <h3>A fresh page, for now.</h3>
+                <p>Record an ad to see which app was visible.</p><button class="button secondary" data-go="hunt">Find
+                  the ad <svg>
+                    <use href="#i-arrow" />
+                  </svg></button>
+              </div>
+            </article>
+            <article class="card app-detail stagger" id="app-detail">
+              <div class="detail-placeholder" id="detail-placeholder">
+                <div class="detail-icon"><svg>
+                    <use href="#i-phone" />
+                  </svg></div>
+                <h2>Get to know the app</h2>
+                <p>Select a recorded app to see its details and your options.</p>
+              </div>
+              <div id="detail-content" hidden>
+                <div class="detail-app-icon" id="detail-app-icon">A</div>
+                <h2 id="detail-name"></h2>
+                <p class="package-name" id="detail-package"></p>
+                <div class="evidence-box"><svg>
+                    <use href="#i-eye" />
+                  </svg><span id="detail-evidence"></span></div>
+                <p class="context-note">Open the app’s information on your phone to check its name, icon, and settings
+                  before deciding.</p><button class="button secondary full-width" id="settings-button"><svg>
+                    <use href="#i-phone" />
+                  </svg>Show app on phone</button><button class="button danger full-width" id="remove-button"><svg>
+                    <use href="#i-trash" />
+                  </svg>Remove this app…</button>
+                <p class="fine-print" id="removal-note">You’ll be asked to confirm. Saved app data may be lost.</p>
+              </div>
+            </article>
+          </div>
+          <div class="inline-note"><svg>
+              <use href="#i-info" />
+            </svg>
+            <p>Ads inside a free app may be part of that app. Browser or notification settings may solve the problem
+              without removing anything.</p>
+          </div>
+          <div class="page-actions"><button class="button secondary" data-go="hunt"><svg>
+                <use href="#i-target" />
+              </svg>Record another ad</button><button class="button primary" data-go="finish">Finish for now <svg>
+                <use href="#i-arrow" />
+              </svg></button></div>
+        </section>
+        <section class="page" id="page-finish" aria-labelledby="finish-title" hidden>
+          <div class="page-heading">
+            <div>
+              <div class="eyebrow"><span class="tiny-line"></span> STEP 04 / FINISH UP</div>
+              <h1 id="finish-title" tabindex="-1">A little more <span>peace of mind.</span></h1>
+              <p class="page-description">Use your phone for a while. Have the unwanted ads stopped?</p>
+            </div>
+          </div>
+          <div class="finish-grid">
+            <article class="card finish-card stagger">
+              <div class="finish-emblem"><svg>
+                  <use href="#i-shield" />
+                </svg></div>
+              <h2>How’s your phone feeling?</h2>
+              <p>Take your time. If an ad returns, we can gather another clue.</p><button
+                class="button primary full-width" id="ads-stopped"><svg>
+                  <use href="#i-check" />
+                </svg>The unwanted ads have stopped</button><button class="button secondary full-width" data-go="hunt"
+                id="try-again"><svg>
+                  <use href="#i-refresh" />
+                </svg>I still see ads — try again</button>
+              <p class="success-message" id="finish-feedback" role="status"></p>
+            </article>
+            <article class="card stagger">
+              <div class="card-topline">
+                <h2>Before you unplug</h2><span class="mini-icon"><svg>
+                    <use href="#i-lock" />
+                  </svg></span>
+              </div>
+              <ol class="setup-steps finish-steps">
+                <li><span class="number">1</span>
+                  <div>
+                    <h3>Turn USB debugging off</h3>
+                    <p>On your phone, open Settings → Developer options → USB debugging.</p>
+                  </div>
+                </li>
+                <li><span class="number">2</span>
+                  <div>
+                    <h3>Remove trust if you prefer</h3>
+                    <p>Choose Revoke USB debugging authorizations. This removes trust for all previously approved
+                      computers.</p>
+                  </div>
+                </li>
+                <li><span class="number">3</span>
+                  <div>
+                    <h3>Unplug and carry on</h3>
+                    <p>You can close this browser tab. Stop the Python app when you’re done.</p>
+                  </div>
+                </li>
+              </ol>
+            </article>
+          </div>
+          <div class="reassurance"><svg>
+              <use href="#i-lock" />
+            </svg>
+            <p>No reports uploaded. No account created. Just a helping hand.</p>
+          </div>
+        </section>
+        <footer class="main-footer"><span>Made for a little less interruption.</span><span><svg>
+              <use href="#i-shield" />
+            </svg> Your choices. Your phone.</span></footer>
+      </main>
+    </div>
+  </div>
+  <div class="busy-bar" id="busy-bar" role="status" hidden><span class="spinner"></span><span id="busy-message">Working
+      on it…</span></div>
+  <div class="toast-region" id="toast-region" aria-live="polite" aria-atomic="true"></div>
+  <dialog id="help-dialog" aria-labelledby="help-title">
+    <div class="dialog-top"><span class="eyebrow" id="help-step">CONNECTION HELP</span><button class="icon-button"
+        data-close="help-dialog" aria-label="Close connection help"><svg>
+          <use href="#i-close" />
+        </svg></button></div>
+    <div class="guide-illustration"><svg>
+        <use href="#i-phone" />
+      </svg></div>
+    <h2 id="help-title"></h2>
+    <p id="help-body"></p>
+    <div class="guide-progress" id="guide-progress" aria-hidden="true"></div>
+    <div class="dialog-actions"><button class="button secondary" id="help-back">Back</button><button
+        class="button primary" id="help-next">Next step <svg>
+          <use href="#i-arrow" />
+        </svg></button></div>
+  </dialog>
+  <dialog id="remove-dialog" aria-labelledby="remove-title" aria-describedby="remove-description">
+    <div class="dialog-top"><span class="eyebrow">YOUR CHOICE, ALWAYS</span><button class="icon-button"
+        data-close="remove-dialog" aria-label="Cancel removal"><svg>
+          <use href="#i-close" />
+        </svg></button></div>
+    <div class="remove-emblem"><svg>
+        <use href="#i-trash" />
+      </svg></div>
+    <h2 id="remove-title">Remove this app?</h2>
+    <p id="remove-app-name" class="remove-app-name"></p>
+    <p id="remove-description">This removes the app from the phone’s main profile and may delete its saved data.
+      Reinstalling may not restore that data.</p>
+    <div class="inline-note"><svg>
+        <use href="#i-info" />
+      </svg>
+      <p>Being visible during an ad does not prove this app caused it.</p>
+    </div>
+    <div class="dialog-actions"><button class="button secondary" id="keep-app" autofocus>Keep app</button><button
+        class="button danger" id="confirm-remove">Yes, remove app</button></div>
+  </dialog>
+</body>
+
+</html>
